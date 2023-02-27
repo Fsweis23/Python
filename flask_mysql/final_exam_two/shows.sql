@@ -1,0 +1,1 @@
+SELECT * FROM final_exam_two.users;

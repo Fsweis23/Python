@@ -1,0 +1,70 @@
+Steps to Going Full-Stack
+
+1. Look at your wireframe. What does our form look like? This should be mimicked in your EERD.
+2. Create an EERD with necesary tables.
+3. Forward engineer your EERD and make sure your schema checks out.
+----------------------------------------------------------------
+-Setting up Project Folder-
+----------------------------------------------------------------
+4. Open up VS Code
+5. Create a project folder.
+6. cs into your project folder
+7. install your virtual envirment and any dependencies needed.
+    ex) python -m pipenv install flask pymysql bcrypt
+8. run your shell NOTE: If you haave successfully entered your virtual environment then you should see some form of indication in your terminal. ie: (users_crud-516ojk9m)
+    ex) python -mpipenv shell
+----------------------------------------------------------------
+-Modularizing Project Folder-
+----------------------------------------------------------------
+9. create server.py file in your root project folder
+    ex) from flask_app import flask_app
+    from flask_app.controllers import YOUR_CONTROLLER_GOES_HERE
+
+    if __name__=="__main__":
+        app.run(debug=True
+        )
+10. create a flask_app folder in your root project folder
+11. withing the flask_app folder create an __init__.py file.
+    ex) from flask import flask
+        app = Flask(__name__)
+
+12. create the necesary folders within flask_app. config, controllers, models, templates. NOTE: All the folders except config are plural.
+
+----------------------------------------------------------------
+-Config Folder-
+----------------------------------------------------------------
+13. create a mysqlconnection.py in your config folder
+14. paste into that file the necesary files
+
+----------------------------------------------------------------
+-Templates Folder-
+----------------------------------------------------------------
+15. create any necesary html files needed.
+- a page to render all your data
+- a page to create something
+- a page to edit something
+- a page to create only one thing
+
+----------------------------------------------------------------
+-Controllers Folder-
+----------------------------------------------------------------
+- create a controller filed named after your model. ie) something_controller.py
+    ex) 
+
+----------------------------------------------------------------
+-Models Folder-
+----------------------------------------------------------------
+17. create a file that contains a class and reflects your table in MySQL. Hence, if you have 3 tables then you should have 3 models.
+
+*CRUD QUERY*
+CREATE
+ "INSERT INTO table_name (LIST YOUR COLUMNS HERE) VALUES (%(THIS SHOULD MATCH YOUR FORM NAME)s);"
+
+READ
+ "SELECT * FROM table_name;"
+
+UPDATE
+ "UPDATE table_name SET COLUMN_NAM=%{FORM_NAME}s"
+
+DELETE
+ "DELETE FROM table_nme WHERE id=%{id}s"

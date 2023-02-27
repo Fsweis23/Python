@@ -1,0 +1,3 @@
+function mailingAlert() {
+    alert("Welcome!");
+}

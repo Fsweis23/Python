@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Posts</title>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            {% for message in get_flashed_messages() %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <h1>Add a party</h1>
+            <div>
+                <a href="/welcome" class="btn btn-danger">Home</a>
+            </div>
+        </div>
+        {% for message in get_flashed_messages() %}
+        <p class="text-danger">{{message}}</p>
+        {% endfor %}
+        <form action="/parties/create" method="post">
+            <label for="what">What</label>
+            <input type="text" name="what" id="what" class="form-control">
+            <label for="location">Where</label>
+            <input type="text" name="location" id="location" class="form-control">
+            <label for="what">Date</label>
+            <input type="date" name="date" id="date" class="form-control">
+            <div>
+                All ages:
+                <label for="true">True</label>
+                <input type="radio" name="all-ages" id="true" value="1">
+                <label for="false">False</label>
+                <input type="radio" name="all-ages" id="false" value="0">
+            </div>
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <button class="btn btn-primary">Add party</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML Table</h1>
+    <a href="/templates">Templates Link</a>
+    <table>
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Full Name</th>
+        </thead>
+        <tbody>
+            {% for value in dict_item %}
+            <tr>
+                <td>{{value['first_name']}}</td>
+                <td>{{value['last_name']}}</td>
+                <td>{{value['first_name']}} {{value['last_name']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+<!-- <table>
+    <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+    </tr>
+</table>  -->
+
+    <!-- {% for dict_item in parent_list %}
+    {% for key, value in dict_item.items() %}
+        <h1>Key: {{key}}</h1>
+        <h2>Value: {{value}}</h2>
+    {% endfor %}
+{% endfor %} -->
+</body>
+</html>

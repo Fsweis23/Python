@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Car</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Put Car Up For Sale</h1>
+            <div>
+                <a href="/welcome">Dashboard</a>
+                <a href="/users/logout">Logout</a>
+            </div>
+        </div>
+        {% for message in get_flashed_messages() %}
+        <p >{{message}}</p>
+        {% endfor %}
+        <form action="/cars/create" method="post">
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price">
+
+            <label for="model">Model:</label>
+            <input type="text" name="model" id="model">
+
+            <label for="make">Make:</label>
+            <input type="text" name="make" id="make">
+
+            <label for="year">Year:</label>
+            <input type="number" name="year" id="year">
+
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+            <button>Add</button>
+        </form>
+    </div>
+</body>
+</html>

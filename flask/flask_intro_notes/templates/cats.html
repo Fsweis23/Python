@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}"> -->
+    <!-- <style>
+        #box{
+            height: {{h}}px;
+            width: {{w}}px;
+            background-color: {{color}};
+            display: inline-block;
+        }
+    </style> -->
+</head>
+<body>
+    <div class="container">
+        <div id="box"></div>
+        <h1>Here's some cats</h1>
+        <ul>
+            {%for one_cat in cats %}
+            <li>Name: {{one_cat['name']}} Color:{{one_cat.color}}</li>
+            {% endfor %}
+            <img src="{{ url_for('static', filename='img/cake.jpg') }}">
+        </ul>
+    </div>
+
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script> -->
+</body>
+</html>

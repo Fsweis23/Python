@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground Part I</title>
+    <style>
+        body {
+            background-color: darksalmon;
+        }
+        h1 {
+            color: aquamarine;
+            text-align: center;
+        }
+        div.container {
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+            margin: 20px;
+            display: inline-block;
+            border: solid 2px black;
+        }
+
+        div.container_center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <div class="container_center">
+        {% for i in range(3) %}
+        <div class="container"></div>
+        {% endfor %}
+    </div>
+</body>
+</html>
